@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="br.uniriotec.np2tec.propid.shared.classes.Pedido" table="TPCH.ORDERS">
+        <id name="o_orderkey" column="o_orderkey" />
+        <property name="o_custkey" column="o_custkey" />
+        <property name="o_totalprice" column="o_totalprice" />
+        <property name="o_orderdate" column="o_orderdate" />
+        <property name="o_orderpriority" column="o_orderpriority" />
+        <property name="o_orderstatus" column="o_orderstatus" />
+        <property name="o_clerk" column="o_clerk" />
+        <property name="o_shippriority" column="o_shippriority" />
+        <property name="o_comment" column="o_comment" />
+    </class>
+</hibernate-mapping>
