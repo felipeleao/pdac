@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 
@@ -14,7 +14,7 @@ public class HibernateUtil {
     private static ThreadLocal<Session> sessions = new ThreadLocal<Session>();
 
     static {
-        sessionFactory = new AnnotationConfiguration().configure().buildSessionFactory();
+        sessionFactory = new Configuration().configure().buildSessionFactory();
     }
 
     public static Session getSession(){
