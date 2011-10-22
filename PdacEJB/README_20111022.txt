@@ -1,0 +1,45 @@
+Para que os projetos possam funcionar se faz necessário que a biblioteca presente na pasta BIBLIOTECAS JAVA seja criada no conjunto de bibliotecas do Netbeans, caso contrario os projetos relatarão a ausência de dependências.
+
+Baixando o projeto do googlecode "http://code.google.com/p/pdac" ou através do zip disponibilizado, é necessário executar as seguintes configurações.
+
+=============================================================
+A) Criação de Biblioteca Hibernate-3.
+1) selecione MENU > FERRAMENTAS > BIBLIOTECAS
+
+2) clique no botão NOVA BIBLIOTECA e dê o nome "Hibernate-3".
+
+3) Selecione a biblioteca que acaba de ser criada e clique no botão "Adicionar JAR/Pasta…"
+
+4) selecione todos os arquivos ".JAR" presentes na pasta "Bibliotecas Java\Hibernate-3".
+
+=============================================================
+B) Geração do JAR ControleAcesso.
+1) Abra o projeto "ControleAcesso" no NetBeans.
+
+2) Gere o JAR deste projeto ao clicar em "Construir" a partir do clique direito no nome do projeto.
+
+3) Este JAR é criado na pasta <home>\ControleAcesso\dist.
+
+=============================================================
+C) Verificar se o a configuração do projeto EJBVendas está correta.
+1) Abra o projeto "EJBVendas" no NetBeans.
+
+2) Verifique se há algum erro de dependência. Dependendo da ordem que os projetos foram abertos no NetBeans e a biblioteca "Hibernate-3" tenha sido criada. Alguns erros podem aparecer neste projeto. Seguindo os passos anteriores. Este projeto não conterá erros de configuração.
+
+3) No entanto, caso tenha erro de dependência para o projeto ControleAcesso, reconfigure a referência para o JAR de ControleAcesso.
+
+=============================================================
+D) Configurar ClienteVendas
+1) Verificar se as dependência para o JAR ControleAcesso está correta. Vá nas "Propriedades" do projeto, na opção "Bibliotecas", e verifique o caminho utilizado para referenciar o JAR do projeto ControleAcesso e verifique se este JAR existe na pasta referenciada e se a referência está correta (sem erros).
+
+2) Configure a referência para os arquivos JAR "jboss-aspect-library.jar", "jboss-client.jar", nas propriedades do projeto, bibiotecas para referenciar estes arquivos que se encontram em "Bibliotecas Java\JBoss-Client".
+
+3) Com todas as referências corrigidas realize os comandos de "Limpar" (clean) e "Construir" (Build). Após execute o comando "Implantar" (Deploy) para que o JAR gerado seja implantado no servidor JBoss, que caso esteja parado será inicializado. OBS: caso seja necessário reconstruir o projeto certifique-se de que o servidor foi parado antes de o JAR ser novamente reimplantado, pois é possível que a IDE não consiga substituir o arquivo por considerá-lo "em uso".
+
+=============================================================
+E) Instalação do servidor JBoss
+O projeto "EJBVendas" necessita de um servidor Jboss versão 4.2.0 configurado.
+Caso este servidor já não esteja instalado no seu computador, ele pode ser baixado do site do jboss (http://www.jboss.org/jbossas/downloads/).
+Baixe a versão .zip e descompacte-a no diretório "Arquivos de Programas" do seu computador.
+Em seguida, configure o servidor no Netbeans, em FERRAMENTAS > SERVIDORES > ADICIONAR SERVIDOR.
+Por fim, configure o projeto "EJBVendas" para executar no JBoss.
