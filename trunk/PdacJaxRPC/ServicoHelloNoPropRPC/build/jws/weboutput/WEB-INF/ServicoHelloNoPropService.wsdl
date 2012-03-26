@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<s0:definitions name="ServicoHelloNoPropServiceDefinitions" targetNamespace="http://br/uniriotec/propid/rpc/noprop" xmlns="" xmlns:s0="http://schemas.xmlsoap.org/wsdl/" xmlns:s1="http://br/uniriotec/propid/rpc/noprop" xmlns:s2="http://schemas.xmlsoap.org/wsdl/soap/">
+  <s0:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://br/uniriotec/propid/rpc/noprop" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="hello">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="helloResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="return" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+  </s0:types>
+  <s0:message name="hello">
+    <s0:part element="s1:hello" name="parameters"/>
+  </s0:message>
+  <s0:message name="helloResponse">
+    <s0:part element="s1:helloResponse" name="parameters"/>
+  </s0:message>
+  <s0:portType name="ServicoHelloNoProp">
+    <s0:operation name="hello" parameterOrder="parameters">
+      <s0:input message="s1:hello"/>
+      <s0:output message="s1:helloResponse"/>
+    </s0:operation>
+  </s0:portType>
+  <s0:binding name="ServicoHelloNoPropServiceSoapBinding" type="s1:ServicoHelloNoProp">
+    <s2:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <s0:operation name="hello">
+      <s2:operation style="document"/>
+      <s0:input>
+        <s2:body parts="parameters" use="literal"/>
+      </s0:input>
+      <s0:output>
+        <s2:body parts="parameters" use="literal"/>
+      </s0:output>
+    </s0:operation>
+  </s0:binding>
+  <s0:service name="ServicoHelloNoPropService">
+    <s0:port binding="s1:ServicoHelloNoPropServiceSoapBinding" name="ServicoHelloNoPropSoapPort">
+      <s2:address location="http://localhost:7001/ServicoHelloNoPropRPC/ServicoHelloNoProp"/>
+    </s0:port>
+  </s0:service>
+</s0:definitions>
