@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<j2ee:java-wsdl-mapping xmlns:j2ee="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <j2ee:package-mapping>
+    <j2ee:package-type>br.uniriotec.propid</j2ee:package-type>
+    <j2ee:namespaceURI>http://br/uniriotec/propid</j2ee:namespaceURI>
+  </j2ee:package-mapping>
+  <j2ee:service-interface-mapping>
+    <j2ee:service-interface>javax.xml.rpc.Service</j2ee:service-interface>
+    <j2ee:wsdl-service-name xmlns:prop="http://br/uniriotec/propid">prop:ServicoHelloService</j2ee:wsdl-service-name>
+    <j2ee:port-mapping>
+      <j2ee:port-name>ServicoHelloSoapPort</j2ee:port-name>
+      <j2ee:java-port-name>getServicoHelloSoapPort</j2ee:java-port-name>
+    </j2ee:port-mapping>
+  </j2ee:service-interface-mapping>
+  <j2ee:service-endpoint-interface-mapping>
+    <j2ee:service-endpoint-interface>br.uniriotec.propid.ServicoHelloPortType</j2ee:service-endpoint-interface>
+    <j2ee:wsdl-port-type xmlns:prop="http://br/uniriotec/propid">prop:ServicoHello</j2ee:wsdl-port-type>
+    <j2ee:wsdl-binding xmlns:prop="http://br/uniriotec/propid">prop:ServicoHelloServiceSoapBinding</j2ee:wsdl-binding>
+    <j2ee:service-endpoint-method-mapping>
+      <j2ee:java-method-name>hello</j2ee:java-method-name>
+      <j2ee:wsdl-operation>hello</j2ee:wsdl-operation>
+      <j2ee:wrapped-element></j2ee:wrapped-element>
+      <j2ee:wsdl-return-value-mapping>
+        <j2ee:method-return-value>java.lang.String</j2ee:method-return-value>
+        <j2ee:wsdl-message xmlns:prop="http://br/uniriotec/propid">prop:helloResponse</j2ee:wsdl-message>
+        <j2ee:wsdl-message-part-name>return</j2ee:wsdl-message-part-name>
+      </j2ee:wsdl-return-value-mapping>
+    </j2ee:service-endpoint-method-mapping>
+  </j2ee:service-endpoint-interface-mapping>
+</j2ee:java-wsdl-mapping>

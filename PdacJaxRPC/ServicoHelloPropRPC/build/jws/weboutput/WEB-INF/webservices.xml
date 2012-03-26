@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<webservices xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <webservice-description>
+    <webservice-description-name>br.uniriotec.propid.ServicoHello</webservice-description-name>
+    <wsdl-file>WEB-INF/ServicoHelloService.wsdl</wsdl-file>
+    <jaxrpc-mapping-file>WEB-INF/ServicoHelloService.xml</jaxrpc-mapping-file>
+    <port-component>
+      <port-component-name>ServicoHelloSoapPort</port-component-name>
+      <wsdl-port xmlns:prop="http://br/uniriotec/propid">prop:ServicoHelloSoapPort</wsdl-port>
+      <service-endpoint-interface>br.uniriotec.propid.ServicoHelloPortType</service-endpoint-interface>
+      <service-impl-bean>
+        <servlet-link>ServicoHelloServiceServlethttp</servlet-link>
+      </service-impl-bean>
+      <handler>
+        <handler-name>br.uniriotec.propid.UsernameHandlerRPC</handler-name>
+        <handler-class>br.uniriotec.propid.UsernameHandlerRPC</handler-class>
+      </handler>
+    </port-component>
+  </webservice-description>
+</webservices>
