@@ -12,7 +12,7 @@ Application architectures for database access can be divided into four types (Az
 
    * **Client application connects to and application server that invokes a web service that access the database (Figure 1.iii):** many layers are considered in this scenario to propagate user identity, and the real user that is logged in the operating system where application client is running is far from the database. 
 
-![Application Screenshot](https://raw.githubusercontent.com/felipeleao/pdac/master/images/screenshots/4cenarios.png "The four cenarios")
+![Application Screenshot](https://raw.githubusercontent.com/felipeleao/pdac/master/screenshots/4cenarios.png "The four cenarios")
 
 **Figure 1.** Identity propagation considering the four scenarios for database access
 
