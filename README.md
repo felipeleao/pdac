@@ -1,4 +1,4 @@
-# PDAC
+# PDAC (Pragmatic Data Access Control)
 
 This project comprises pragmatic solutions for identity propagation and data access control. Identity propagation allows a user identity to be preserved in distributed application architectures, regardless of where the identity information was created, for use during authorization and for auditing purposes (IBM, 2011). Data access control (or authorization rule execution), on the other side, is an authorization mechanism that enforce authorization rules, a type of business rule that restricts who is allowed to perform a certain action on which data (BRG, 2000). 
 
